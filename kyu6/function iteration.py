@@ -30,4 +30,4 @@ print(double_iterator(5))
 
 
 """ Copied the solution, didn't solve myself. gotta ask someone wtf is going on. """
-https://www.codewars.com/kata/function-iteration/train/python
+#https://www.codewars.com/kata/function-iteration/train/python
