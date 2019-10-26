@@ -1,6 +1,5 @@
 def sum_of_intervals(intervals):
-
-    intervals = sorted(intervals, key=lambda interval: interval[0])
+    intervals = sorted([list(inter) for inter in intervals], key=lambda interval: interval[0])
     merged = [intervals[0]]
     for current in intervals:
         previous = merged[-1]
@@ -8,7 +7,6 @@ def sum_of_intervals(intervals):
             previous[1] = max(previous[1], current[1])
         else:
             merged.append(current)
-    print(sum([end - beg for beg,end in merged]))
-sum_of_intervals([[1,2],[11, 15],
-   [6, 10]
-   ])
+    return sum([end - beg for beg,end in merged])
+
+print(sum_of_intervals([[1,2],[11, 15],[6, 10]]))
