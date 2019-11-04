@@ -16,14 +16,14 @@ def cakes(recipe, available):
     karl = []
     for ingridient in recipe.keys():
         if ingridient not in available.keys() or recipe[ingridient]>available[ingridient]:
-            print('Not enough ingridients')
+            print(f'Not enough ingridients, need more {ingridient}.')
             return 0
         else:
             karl.append(available[ingridient]/recipe[ingridient])
     print(int(min(karl)))
     return int(min(karl))
 
-cakes({"flour": 500, "sugar": 200, "eggs": 1}, {"flour": 1400, "sugar": 1200, "eggs": 5, "milk": 200})
+cakes({"flour": 500, "sugar": 200, "eggs": 1}, {"flour": 1500, "sugar": 1200, "eggs": 5, "milk": 200})
 
 """ Good solution:
 def cakes(recipe, available):
