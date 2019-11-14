@@ -14,11 +14,12 @@ Your function should take an amount to change and an array of unique denominatio
   count_change(11, [5,7]) # => 0 """
 
 def count_change(money, coins):
-    if any(money%coin == 0 for coin in coins):
-        
-        pass
-    else:
-        print('0')
-        return 0
+    ways = [1]+[0]*money
+    for coin in coins:
+        for i in range(coin,money+1):
+            ways[i]+=ways[i-coin]
+    return ways[money]
 
 count_change(11, [5,7])
+
+#need to understand dynamic solution.
