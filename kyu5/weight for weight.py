@@ -17,17 +17,22 @@ All numbers in the list are positive numbers and the list can be empty.
 
 Notes
 it may happen that the input string have leading, trailing whitespaces and more than a unique whitespace between two consecutive numbers
-Don't modify the input """
+Don't modify the input 
+
+https://www.codewars.com/kata/55c6126177c9441a570000cc
+
+"""
 
 def order_weight(strng):
     inp = [item for item in strng.split()]
     weights = [sum([int(let) for let in item]) for item in inp]
-    weighted = dict(zip(weights,inp))
+    weighted = list(zip(weights,inp))
     result = ''
     print(inp)
     print(weights)
-    for item in sorted(weights):
-        result += str(weighted[item]) + ' '
+    print(sorted(weighted))
+    for item,mass in sorted(weighted):
+        result += str(mass) + ' '
     print(result)
     #print(sorted(weighted.values()))
 
