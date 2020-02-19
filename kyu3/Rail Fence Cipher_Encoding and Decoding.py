@@ -42,8 +42,19 @@ def encode_rail_fence_cipher(string, n):
             i -= 1
             results.append(i)
     karl = list(zip(results,string))
-            
-    print(karl)
+    test_list = []
+    for i in range(n):
+        test_list.insert(n,['0']*len(string))
+    counter = 0
+    for index,value in karl:
+        test_list[index-1][counter] = value
+        counter+=1
+    
+    resulting_list = [''.join(item).replace('0','') for item in test_list]
+    print(''.join(resulting_list))
+    # for item in test_list:
+    #     resulting_list.append(''.join(item).replace('0',' '))
+    # return '\n'.join(resulting_list)[:-1]
 
 encode_rail_fence_cipher("WEAREDISCOVEREDFLEEATONCE" ,3)
 
